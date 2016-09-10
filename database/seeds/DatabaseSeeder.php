@@ -6,6 +6,11 @@ class DatabaseSeeder extends Seeder
 {
    public function run()
    {
+      Eloquent::unguard();
+
+      //disable foreign key check for this connection before running seeders
+      DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
       //Area
       $this->call(AreaTableSeeder::class);
       //Supplier
@@ -14,6 +19,12 @@ class DatabaseSeeder extends Seeder
       $this->call(PaymentTypeTableSeeder::class);
       //Purchase Order
       $this->call(PurchaseOrderTableSeeder::class);
-        // $this->call(UsersTableSeeder::class);
+      //User
+      $this->call(UserTableSeeder::class);
+      //Product
+      $this->call(ProductTableSeeder::class);
+
+      //enable foreign key check for this connection before running seeders
+      DB::statement('SET FOREIGN_KEY_CHECKS=1;');
    }
 }

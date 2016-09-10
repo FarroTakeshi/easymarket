@@ -7,6 +7,7 @@ class AreaTableSeeder extends Seeder
 
    public function run()
    {
+      DB::table('areas')->truncate();
       DB::table('areas')->insert([
          [
             'name'        => 'Electrodomesticos',
