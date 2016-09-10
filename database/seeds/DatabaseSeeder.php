@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
       $this->call(UserTableSeeder::class);
       //Product
       $this->call(ProductTableSeeder::class);
+      //Order details
+      $this->call(OrderDetailTableSeeder::class);
 
       //enable foreign key check for this connection before running seeders
       DB::statement('SET FOREIGN_KEY_CHECKS=1;');
