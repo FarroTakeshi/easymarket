@@ -4,9 +4,9 @@ use Illuminate\Database\Seeder;
 
 class SupplierTableSeeder extends Seeder
 {
-
    public function run()
    {
+      DB::table('suppliers')->truncate();
       DB::table('suppliers')->insert([
          [
             'name' => 'CompuSell',

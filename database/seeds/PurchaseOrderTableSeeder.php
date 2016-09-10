@@ -6,6 +6,7 @@ class PurchaseOrderTableSeeder extends Seeder
 {
    public function run()
    {
+      DB::table('purchase_orders')->truncate();
       DB::table('purchase_orders')->insert([
          [
             'reception_date'  => date('2015-12-01'),
