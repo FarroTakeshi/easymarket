@@ -27,7 +27,7 @@ class SupplierController extends Controller
 
       $this->validate($request, [
          'name' => 'required|string',
-         'ruc'  => 'required|unique:suppliers',
+         'ruc'  => 'required|unique:suppliers,ruc',
       ]);
 
       $supplier = new Supplier;
@@ -58,7 +58,7 @@ class SupplierController extends Controller
 
       $this->validate($request, [
          'name' => 'required|string',
-         'ruc'  => 'required|unique:suppliers,ruc',
+         'ruc'  => 'required|unique:suppliers,ruc,'.$id,
       ]);
 
       $supplier = Supplier::find($id);
