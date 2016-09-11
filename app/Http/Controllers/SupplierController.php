@@ -26,8 +26,8 @@ class SupplierController extends Controller
    public function store(Request $request) {
 
       $this->validate($request, [
-         'name' => 'required',
-         'ruc'  => 'required|unique',
+         'name' => 'required|string',
+         'ruc'  => 'required|unique:suppliers',
       ]);
 
       $supplier = new Supplier;
@@ -40,7 +40,7 @@ class SupplierController extends Controller
 
       $supplier->save();
 
-      return redirect()->route('suppliers.index')->with('message', 'registered area');
+      return redirect()->route('suppliers.index')->with('message', 'registered supplier');
    }
 
    public function edit($id) {
@@ -48,7 +48,7 @@ class SupplierController extends Controller
       $supplier = Supplier::find($id);
 
       $data = [
-         'suppliers' => $suppliers,
+         'supplier' => $supplier,
       ];
 
       return view('backend.suppliers.edit', $data);
@@ -57,8 +57,8 @@ class SupplierController extends Controller
    public function update($id, Request $request) {
 
       $this->validate($request, [
-         'name' => 'required',
-         'ruc'  => 'required',
+         'name' => 'required|string',
+         'ruc'  => 'required|unique:suppliers,ruc',
       ]);
 
       $supplier = Supplier::find($id);
@@ -66,7 +66,7 @@ class SupplierController extends Controller
       $supplier->name = $request->input('name');
       $supplier->ruc  = $request->input('ruc');
 
-      $area->save();
+      $supplier->save();
 
       return redirect()->route('suppliers.index')->with('message', 'updated supplier');
    }
