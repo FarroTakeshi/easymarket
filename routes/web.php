@@ -21,6 +21,16 @@ Route::group(['middleware' => 'web'], function () {
       Route::post('/edit/{id}', ['as' => 'update', 'uses' => 'AreaController@update']);
       Route::get('/delete/{id}', ['as' => 'delete', 'uses' => 'AreaController@delete']);
    });
+
+   //Supplier
+    Route::group(['prefix' => 'suppliers', 'as' => 'suppliers.'], function(){
+      Route::get('/index', ['as' => 'index', 'uses' => 'SupplierController@index']);
+      Route::get('/new', ['as' => 'create', 'uses' => 'SupplierController@create']);
+      Route::post('/new', ['as' => 'store', 'uses' => 'SupplierController@store']);
+      Route::get('/edit/{id}', ['as' => 'edit', 'uses' => 'SupplierController@edit']);
+      Route::post('/edit/{id}', ['as' => 'update', 'uses' => 'SupplierController@update']);
+      Route::get('/delete/{id}', ['as' => 'delete', 'uses' => 'SupplierController@delete']);
+   });
 });
 
 Route::get('/', function () {

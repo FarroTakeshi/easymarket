@@ -11,7 +11,7 @@ class CreateSuppliersTable extends Migration
       Schema::create('suppliers', function (Blueprint $table) {
          $table->increments('id')->unsigned();
          $table->string('name');
-         $table->string('ruc');
+         $table->string('ruc')->unique();
       });
    }
 

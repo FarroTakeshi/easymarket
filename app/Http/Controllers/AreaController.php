@@ -26,8 +26,8 @@ class AreaController extends Controller
    public function store(Request $request) {
 
       $this->validate($request, [
-         'name'        => 'required',
-         'description' => 'required',
+         'name'        => 'required|string',
+         'description' => 'required|string',
       ]);
 
       $area = new Area;
@@ -57,8 +57,8 @@ class AreaController extends Controller
    public function update($id, Request $request) {
 
       $this->validate($request, [
-         'name'        => 'required',
-         'description' => 'required',
+         'name'        => 'required|string',
+         'description' => 'required|string',
       ]);
 
       $area = Area::find($id);
