@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
       $this->call(PaymentTypeTableSeeder::class);
       //Purchase Order
       $this->call(PurchaseOrderTableSeeder::class);
+      //Warehouse
+      $this->call(WarehouseTableSeeder::class);
       //User
       $this->call(UserTableSeeder::class);
       //Product

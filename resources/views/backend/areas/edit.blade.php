@@ -42,7 +42,7 @@
          </div>
          <!-- End description -->
 
-         <!-- Start registrar -->
+         <!-- Start update -->
          <div class="form-group">
 
             <div class="col-xs-6 col-xs-offset-1">
@@ -50,7 +50,7 @@
             </div>
 
          </div>
-         <!-- End registrar -->
+         <!-- End update -->
 
       </div>
 

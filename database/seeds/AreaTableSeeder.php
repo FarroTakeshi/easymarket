@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 
 class AreaTableSeeder extends Seeder
 {
-
    public function run()
    {
       DB::table('areas')->truncate();
