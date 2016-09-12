@@ -38,7 +38,7 @@
             <td>{{ $supplier->ruc }}</td>
             <td>
                <a class="btn btn-default" href="{{ route('suppliers.edit', ['id' => $supplier->id]) }}">Edit</a>
-               <a class="btn btn-danger" id="delete_button" href="{{ route('suppliers.delete', ['id' => $supplier->id]) }}" onclick="return confirm('Are you sure you want to delete this supplier?');">Delete</a>
+               <a class="btn btn-danger" id="delete_button" href="{{ route('suppliers.delete', ['id' => $supplier->id]) }}" onclick="return confirm('Are you sure you want to delete this supplier?')">Delete</a>
             </td>
          </tr>
          @endforeach
