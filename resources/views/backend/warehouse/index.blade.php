@@ -37,6 +37,7 @@
             <td>{{ $warehouse->address }}</td>
             <td>
                <a class="btn btn-default" href="{{ route('warehouse.edit', ['id' => $warehouse->id]) }}">Edit</a>
+               <a class="btn btn-info" href="{{ route('warehouse.products.index', ['warehouse' => $warehouse->id]) }}">Products</a>
             </td>
          </tr>
       </tbody>

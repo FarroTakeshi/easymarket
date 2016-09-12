@@ -38,7 +38,7 @@
             <td>{{ $area->description }}</td>
             <td>
                <a class="btn btn-default" href="{{ route('areas.edit', ['id' => $area->id]) }}">Edit</a>
-               <a class="btn btn-danger" id="delete_button" href="{{ route('areas.delete', ['id' => $area->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+               <a class="btn btn-danger" id="delete_button" href="{{ route('areas.delete', ['id' => $area->id]) }}" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
             </td>
          </tr>
          @endforeach
