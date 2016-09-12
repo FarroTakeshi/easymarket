@@ -38,8 +38,18 @@ Route::group(['middleware' => 'web'], function () {
       Route::get('/edit/{id}', ['as' => 'edit', 'uses' => 'WarehouseController@edit']);
       Route::post('/edit/{id}', ['as' => 'update', 'uses' => 'WarehouseController@update']);
    });
+
+   //Auth
+   Route::get('/login', 'Auth\LoginController@login');
+   Route::post('/login', 'Auth\LoginController@login');
+   Route::get('/logout', 'Auth\LoginController@logout');
+
+   Route::get('/', function () {
+      return redirect()->route('login');
+   });
+
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
